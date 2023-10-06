@@ -11,7 +11,7 @@ import SwiftUI
 struct Fetch_Meals_ExerciseApp: App {
     var body: some Scene {
         WindowGroup {
-            MainScreen(vm: MainScreenVM())
+            MainScreen(logic: MainScreenLogic())
         }
     }
 }

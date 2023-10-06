@@ -1,5 +1,5 @@
 //
-//  MainScreenVM.swift
+//  MainScreenLogic.swift
 //  Fetch Meals Exercise
 //
 //  Created by Alexander Lopez on 26/09/23.
@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class MainScreenVM: ObservableObject {
+class MainScreenLogic: BaseScreenLogic {
     @Published var categoryList: [Category] = []
     @Published var mealList: [MealCompactItem] = []
     @Published var selectedCategory: Category? = nil
@@ -16,18 +16,21 @@ class MainScreenVM: ObservableObject {
     @Published var mealRecipe: Meal? = nil
     @Published var showActivityIndicator = false
     
-    private var cancellables = Set<AnyCancellable>()
     private let mealService: TheMealDBService
-    private let initialCategory: String = {
-        AppConfig.shared.getConfig(withKey: "initialCategory") ?? ""
-    }()
+    private let initialCategory: String
     
     var navigationTitle: String {
         selectedCategory?.name ?? "No selected category"
     }
     
-    init(mealService: TheMealDBService = .shared) {
+    static private var defaultCategory: String {
+        AppConfig.shared.getConfig(withKey: "initialCategory") ?? ""
+    }
+    
+    init(mealService: TheMealDBService = TheMealDBService(), initialCategory: String = "") {
+        self.initialCategory = initialCategory.isEmpty ? Self.defaultCategory : initialCategory
         self.mealService = mealService
+        super.init()
         
         $selectedCategory
             .dropFirst()

@@ -8,22 +8,22 @@
 import SwiftUI
 
 struct MainScreen: View {
-    @ObservedObject var vm: MainScreenVM
+    @ObservedObject var logic: MainScreenLogic
     
-    init(vm: MainScreenVM) {
-        self.vm = vm
+    init(logic _logic: MainScreenLogic) {
+        self.logic = _logic
     }
     
     var body: some View {
         NavigationStack {
             VStack {
-                CategorySelectorView(categoryList: vm.categoryList, selectedCategory: $vm.selectedCategory)
+                CategorySelectorView(categoryList: logic.categoryList, selectedCategory: $logic.selectedCategory)
                 
-                if !vm.showActivityIndicator {
-                    if !vm.mealList.isEmpty {
+                if !logic.showActivityIndicator {
+                    if !logic.mealList.isEmpty {
                         MealsListView(
-                            meals: vm.mealList,
-                            selection: $vm.selection
+                            meals: logic.mealList,
+                            selection: $logic.selection
                         )
                     } else {
                         EmptyMealListView()
@@ -35,17 +35,17 @@ struct MainScreen: View {
                 }
             }
             .navigationBarTitleDisplayMode(.large)
-            .navigationTitle(vm.navigationTitle)
-            .navigationDestination(item: $vm.mealRecipe) { meal in
+            .navigationTitle(logic.navigationTitle)
+            .navigationDestination(item: $logic.mealRecipe) { meal in
                 RecipeDetailView(meal: meal)
             }
         }
         .task {
-            await vm.initialLoad()
+            await logic.initialLoad()
         }
     }
 }
 
 #Preview {
-    MainScreen(vm: MainScreenVM())
+    MainScreen(logic: MainScreenLogic())
 }

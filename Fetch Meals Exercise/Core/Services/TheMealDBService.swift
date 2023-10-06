@@ -8,11 +8,9 @@
 import Foundation
 
 struct TheMealDBService {
-    static let shared = TheMealDBService()
     private let baseURL = URL(string: "https://www.themealdb.com/api/json/v1/1/")!
     private let httpRequest = HttpRequest()
     
-    private init() {}
     
     func getCategoryList() async -> [Category] {
         let url = baseURL.appending(path: "categories.php")
