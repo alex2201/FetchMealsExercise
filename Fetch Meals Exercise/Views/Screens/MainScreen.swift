@@ -10,7 +10,7 @@ import SwiftUI
 struct MainScreen: View {
     @ObservedObject var logic: MainScreenLogic
     
-    init(logic _logic: MainScreenLogic) {
+    init(logic _logic: MainScreenLogic = .init()) {
         self.logic = _logic
     }
     
@@ -19,7 +19,7 @@ struct MainScreen: View {
             VStack {
                 CategorySelectorView(categoryList: logic.categoryList, selectedCategory: $logic.selectedCategory)
                 
-                if !logic.showActivityIndicator {
+                ZStack {
                     if !logic.mealList.isEmpty {
                         MealsListView(
                             meals: logic.mealList,
@@ -28,10 +28,10 @@ struct MainScreen: View {
                     } else {
                         EmptyMealListView()
                     }
-                } else {
-                    Spacer()
-                    ProgressView()
-                    Spacer()
+                    
+                    if logic.showActivityIndicator {
+                        ActivityIndicator()
+                    }
                 }
             }
             .navigationBarTitleDisplayMode(.large)
