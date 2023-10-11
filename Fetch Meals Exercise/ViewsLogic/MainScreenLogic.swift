@@ -10,14 +10,17 @@ import Combine
 
 class MainScreenLogic: BaseScreenLogic {
     @Published var categoryList: [Category] = []
-    @Published var mealList: [MealCompactItem] = []
+    @Published var mealListFiltered: [MealCompactItem] = []
     @Published var selectedCategory: Category? = nil
     @Published var selection: MealCompactItem? = nil
     @Published var mealRecipe: Meal? = nil
+    @Published var seachBarText: String = ""
     @Published var showActivityIndicator = false
+    @Published var showSearchBar = false
     
     private let mealService: TheMealDBService
     private let initialCategory: String
+    private var mealList: [MealCompactItem] = []
     
     var navigationTitle: String {
         selectedCategory?.name ?? "No selected category"
@@ -32,17 +35,22 @@ class MainScreenLogic: BaseScreenLogic {
         self.mealService = mealService
         super.init()
         
+        setupSuscribers()
+    }
+    
+    private func setupSuscribers() {
         $selectedCategory
             .dropFirst()
             .compactMap({ $0 })
             .asyncMap({ [weak self] category in
-                await self?.startTask {
-                    await mealService.getMealList(forCategory: category)
+                await self?.startTask { [weak self] in
+                    await self?.mealService.getMealList(forCategory: category)
                 }
             })
             .compactMap({ $0 })
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] list in
+                self?.mealListFiltered = list
                 self?.mealList = list
             })
             .store(in: &cancellables)
@@ -51,8 +59,8 @@ class MainScreenLogic: BaseScreenLogic {
             .dropFirst()
             .compactMap({ $0 })
             .asyncMap({ [weak self] selectedMeal in
-                await self?.startTask {
-                    await mealService.getMealRecipe(for: selectedMeal)
+                await self?.startTask { [weak self] in
+                    await self?.mealService.getMealRecipe(for: selectedMeal)
                 }
             })
             .compactMap({ $0 })
@@ -61,6 +69,37 @@ class MainScreenLogic: BaseScreenLogic {
                 self?.mealRecipe = meal
             })
             .store(in: &cancellables)
+        
+        $showSearchBar
+            .dropFirst()
+            .sink { [weak self] newValue in
+                guard let self else { return }
+                print("Show search bar", newValue)
+                if !newValue {
+                    seachBarText = ""
+                    resetFilteredMealList()
+                }
+            }
+            .store(in: &cancellables)
+        
+        $seachBarText
+            .dropFirst()
+            .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
+            .sink { [weak self] text in
+                guard let self, showSearchBar else { return }
+                if text.isEmpty {
+                    resetFilteredMealList()
+                } else {
+                    mealListFiltered = mealList.filter {
+                        $0.name.lowercased().contains(text.lowercased())
+                    }
+                }
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func resetFilteredMealList() {
+        mealListFiltered = mealList
     }
     
     @MainActor
@@ -79,7 +118,7 @@ class MainScreenLogic: BaseScreenLogic {
     }
     
     @MainActor
-    func startTask<T>(task: () async -> T) async -> T {
+    private func startTask<T>(task: () async -> T) async -> T {
         showActivityIndicator = true
         let result = await task()
         showActivityIndicator = false

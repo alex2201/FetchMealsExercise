@@ -14,12 +14,10 @@ struct MealListItemView: View {
         ZStack(alignment: .bottom) {
             LazyImage(url: meal.thumbnailUrl!) { image in
                 Image(uiImage: image)
-                    .resizable()
-                    .aspectRatio(1.0, contentMode: .fit)
+                    .squared()
             } placeHolder: {
                 Image(systemName: "x.circle")
-                    .resizable()
-                    .aspectRatio(1.0, contentMode: .fit)
+                    .squared()
             }
             
             GeometryReader { geometry in
@@ -30,7 +28,7 @@ struct MealListItemView: View {
                         .lineLimit(2)
                         .font(.subheadline.weight(.heavy))
                         .foregroundStyle(Color.white)
-                        .frame(maxWidth: .infinity)
+                        .fullWidth()
                         .frame(height: geometry.size.width / 4)
                         .background(Color.black.opacity(0.6))
                 }

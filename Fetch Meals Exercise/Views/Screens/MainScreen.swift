@@ -17,20 +17,34 @@ struct MainScreen: View {
     var body: some View {
         NavigationStack {
             VStack {
-                CategorySelectorView(categoryList: logic.categoryList, selectedCategory: $logic.selectedCategory)
+                if logic.showSearchBar {
+                    HStack {
+                        SearchBar(text: $logic.seachBarText)
+                            .autocorrectionDisabled()
+                            .textInputAutocapitalization(.never)
+                        
+                        Button {
+                            withAnimation {
+                                logic.showSearchBar.toggle()
+                            }
+                        } label: {
+                            Text("Cancel")
+                        }
+                    }
+                    .padding([.leading, .trailing, .bottom])
+                } else {
+                    CategorySelectorView(categoryList: logic.categoryList, selectedCategory: $logic.selectedCategory)
+                    .padding([.leading, .trailing, .bottom])
+                }
                 
-                ZStack {
-                    if !logic.mealList.isEmpty {
+                ActivityView(showIndicator: logic.showActivityIndicator) {
+                    if !logic.mealListFiltered.isEmpty {
                         MealsListView(
-                            meals: logic.mealList,
+                            meals: logic.mealListFiltered,
                             selection: $logic.selection
                         )
                     } else {
                         EmptyMealListView()
-                    }
-                    
-                    if logic.showActivityIndicator {
-                        ActivityIndicator()
                     }
                 }
             }
@@ -38,6 +52,20 @@ struct MainScreen: View {
             .navigationTitle(logic.navigationTitle)
             .navigationDestination(item: $logic.mealRecipe) { meal in
                 RecipeDetailView(meal: meal)
+            }
+            .toolbar {
+                if !logic.showSearchBar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button {
+                            withAnimation {
+                                logic.showSearchBar.toggle()
+                            }
+                        } label: {
+                            Image(systemName: "magnifyingglass")
+                                .tint(.black)
+                        }
+                    }
+                }
             }
         }
         .task {

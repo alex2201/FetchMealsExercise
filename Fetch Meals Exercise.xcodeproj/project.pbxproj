@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		C16331B62ACCF551004E3127 /* BaseScreenLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16331B52ACCF551004E3127 /* BaseScreenLogic.swift */; };
 		C16331BA2AD11DB7004E3127 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16331B92AD11DB7004E3127 /* ActivityIndicator.swift */; };
+		C16331BC2AD125E1004E3127 /* FullWidthModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16331BB2AD125E1004E3127 /* FullWidthModifier.swift */; };
+		C16331BF2AD1271B004E3127 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16331BE2AD1271B004E3127 /* ImageExtension.swift */; };
+		C16331C22AD5FD53004E3127 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16331C12AD5FD53004E3127 /* SearchBar.swift */; };
+		C16331C42AD726A8004E3127 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16331C32AD726A7004E3127 /* ActivityView.swift */; };
 		C186B8AA2ABE04FD00A29CD3 /* Fetch_Meals_ExerciseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C186B8A92ABE04FD00A29CD3 /* Fetch_Meals_ExerciseApp.swift */; };
 		C186B8AC2ABE04FD00A29CD3 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C186B8AB2ABE04FD00A29CD3 /* MainScreen.swift */; };
 		C186B8AE2ABE04FE00A29CD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C186B8AD2ABE04FE00A29CD3 /* Assets.xcassets */; };
@@ -45,6 +49,10 @@
 /* Begin PBXFileReference section */
 		C16331B52ACCF551004E3127 /* BaseScreenLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScreenLogic.swift; sourceTree = "<group>"; };
 		C16331B92AD11DB7004E3127 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		C16331BB2AD125E1004E3127 /* FullWidthModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullWidthModifier.swift; sourceTree = "<group>"; };
+		C16331BE2AD1271B004E3127 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
+		C16331C12AD5FD53004E3127 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		C16331C32AD726A7004E3127 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		C186B8A62ABE04FD00A29CD3 /* Fetch Meals Exercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fetch Meals Exercise.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C186B8A92ABE04FD00A29CD3 /* Fetch_Meals_ExerciseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetch_Meals_ExerciseApp.swift; sourceTree = "<group>"; };
 		C186B8AB2ABE04FD00A29CD3 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
@@ -90,6 +98,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C16331BD2AD126CE004E3127 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				C16331BB2AD125E1004E3127 /* FullWidthModifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		C16331C02AD12882004E3127 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C186B8E42AC31FFD00A29CD3 /* ArrayExtension.swift */,
+				C16331BE2AD1271B004E3127 /* ImageExtension.swift */,
+				C1E143642AC3BA7000C8FD3E /* PublisherExtension.swift */,
+				C186B8CF2AC1DF6800A29CD3 /* URLExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		C186B89D2ABE04FD00A29CD3 = {
 			isa = PBXGroup;
 			children = (
@@ -147,13 +174,10 @@
 		C186B8BE2ABE0DE600A29CD3 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				C16331C02AD12882004E3127 /* Extensions */,
 				C1E1435B2AC3A4BD00C8FD3E /* Cache */,
 				C186B8D72AC2155100A29CD3 /* Services */,
 				C186B8C92AC1D53F00A29CD3 /* Network */,
-				C186B8C72AC1D2F700A29CD3 /* ImageCache.swift */,
-				C186B8CF2AC1DF6800A29CD3 /* URLExtensions.swift */,
-				C186B8E42AC31FFD00A29CD3 /* ArrayExtension.swift */,
-				C1E143642AC3BA7000C8FD3E /* PublisherExtension.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -161,13 +185,14 @@
 		C186B8C12AC0613A00A29CD3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C1E1435E2AC3A8C000C8FD3E /* CategorySelector */,
-				C186B8C22AC0614A00A29CD3 /* Screens */,
-				C186B8CC2AC1D7C900A29CD3 /* Components */,
-				C186B8C32AC061B000A29CD3 /* MealsListView.swift */,
-				C186B8D12AC1F7FA00A29CD3 /* MealListItemView.swift */,
-				C186B8D32AC200D600A29CD3 /* RecipeDetailView.swift */,
 				C186B8E02AC28C1B00A29CD3 /* EmptyMealListView.swift */,
+				C186B8D12AC1F7FA00A29CD3 /* MealListItemView.swift */,
+				C186B8C32AC061B000A29CD3 /* MealsListView.swift */,
+				C186B8D32AC200D600A29CD3 /* RecipeDetailView.swift */,
+				C1E1435E2AC3A8C000C8FD3E /* CategorySelector */,
+				C186B8CC2AC1D7C900A29CD3 /* Components */,
+				C16331BD2AD126CE004E3127 /* Modifiers */,
+				C186B8C22AC0614A00A29CD3 /* Screens */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,8 +218,10 @@
 		C186B8CC2AC1D7C900A29CD3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				C16331C32AD726A7004E3127 /* ActivityView.swift */,
 				C16331B92AD11DB7004E3127 /* ActivityIndicator.swift */,
 				C186B8CD2AC1D7E000A29CD3 /* LazyImage.swift */,
+				C16331C12AD5FD53004E3127 /* SearchBar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -210,6 +237,7 @@
 		C1E1435B2AC3A4BD00C8FD3E /* Cache */ = {
 			isa = PBXGroup;
 			children = (
+				C186B8C72AC1D2F700A29CD3 /* ImageCache.swift */,
 				C1E1435C2AC3A4C400C8FD3E /* DefaultImageCache.swift */,
 			);
 			path = Cache;
@@ -315,11 +343,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C16331BC2AD125E1004E3127 /* FullWidthModifier.swift in Sources */,
 				C186B8C42AC061B000A29CD3 /* MealsListView.swift in Sources */,
 				C186B8BD2ABE0B6500A29CD3 /* Meal.swift in Sources */,
 				C186B8D42AC200D600A29CD3 /* RecipeDetailView.swift in Sources */,
 				C1E143652AC3BA7000C8FD3E /* PublisherExtension.swift in Sources */,
 				C186B8C82AC1D2F700A29CD3 /* ImageCache.swift in Sources */,
+				C16331C22AD5FD53004E3127 /* SearchBar.swift in Sources */,
+				C16331BF2AD1271B004E3127 /* ImageExtension.swift in Sources */,
 				C1E1435D2AC3A4C400C8FD3E /* DefaultImageCache.swift in Sources */,
 				C1E143632AC3AC6500C8FD3E /* MainScreenLogic.swift in Sources */,
 				C186B8AC2ABE04FD00A29CD3 /* MainScreen.swift in Sources */,
@@ -333,6 +364,7 @@
 				C186B8DF2AC224BE00A29CD3 /* Category.swift in Sources */,
 				C186B8D62AC2013600A29CD3 /* DessertListPreview.swift in Sources */,
 				C186B8E12AC28C1B00A29CD3 /* EmptyMealListView.swift in Sources */,
+				C16331C42AD726A8004E3127 /* ActivityView.swift in Sources */,
 				C1E143602AC3A8D800C8FD3E /* CategorySelectorItem.swift in Sources */,
 				C1E1435A2AC3A42F00C8FD3E /* HttpRequestError.swift in Sources */,
 				C186B8E52AC31FFD00A29CD3 /* ArrayExtension.swift in Sources */,

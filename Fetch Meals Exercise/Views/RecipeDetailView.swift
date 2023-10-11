@@ -19,18 +19,22 @@ struct RecipeDetailView: View {
             VStack(alignment: .leading) {
                 LazyImage(url: meal.thumbnailUrl!) { image in
                     Image(uiImage: image)
-                        .resizable()
-                        .aspectRatio(1.0, contentMode: .fit)
+                        .squared()
                 } placeHolder: {
                     Image(systemName: "x.circle")
-                        .resizable()
-                        .aspectRatio(1.0, contentMode: .fit)
+                        .squared()
                 }
+                
+                Text(meal.name)
+                    .font(.largeTitle.bold())
+                    .fullWidth()
+                
+                Divider()
                 
                 VStack(alignment: .leading, spacing: 24) {
                     Text("Ingredients")
                         .font(.title)
-                        .frame(maxWidth: .infinity)
+                        .fullWidth()
                     
                     VStack(alignment: .leading, spacing: 12) {
                         ForEach(meal.ingredients) { ingredient in
@@ -40,17 +44,20 @@ struct RecipeDetailView: View {
                 }
                 .padding(16)
                 
+                Divider()
+                
                 VStack(alignment: .leading, spacing: 24) {
                     Text("Instructions")
                         .font(.title)
-                        .frame(maxWidth: .infinity)
+                        .fullWidth()
                     Text(formattedInstructions)
                 }
                 .padding(16)
                 
             }
         }
-        .navigationTitle(meal.name)
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle("Details")
     }
 }
 

@@ -16,7 +16,7 @@ struct ActivityIndicator: View {
                 .scaleEffect(CGSize(width: 2.5, height: 2.5))
             Spacer()
         }
-        .frame(maxWidth: .infinity)
+        .fullWidth()
         .background(.black.opacity(0.4))
     }
 }
