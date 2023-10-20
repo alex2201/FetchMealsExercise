@@ -10,10 +10,10 @@ import SwiftUI
 struct MealsListView: View {
     let meals: [MealCompactItem]
     @Binding var selection: MealCompactItem?
+    let numberOfColumns: Int
     
     private var columnLayout: [GridItem] {
-        // TODO: Suport another layout for iPad
-        [GridItem(.flexible(), spacing: 16), GridItem(.flexible(), spacing: 16)]
+        .init(repeating: GridItem(.flexible(), spacing: 16), count: numberOfColumns)
     }
     
     var body: some View {
@@ -36,5 +36,5 @@ struct MealsListView: View {
 #Preview {
     @State var selection: MealCompactItem? = nil
     
-    return MealsListView(meals: DessertListPreview.dessertList, selection: $selection)
+    return MealsListView(meals: DessertListPreview.dessertList, selection: $selection, numberOfColumns: 2)
 }

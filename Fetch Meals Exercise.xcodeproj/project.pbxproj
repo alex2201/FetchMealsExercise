@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C10A2F312AE26E16001D8509 /* DeviceRotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10A2F302AE26E16001D8509 /* DeviceRotationView.swift */; };
 		C16331B62ACCF551004E3127 /* BaseScreenLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16331B52ACCF551004E3127 /* BaseScreenLogic.swift */; };
 		C16331BA2AD11DB7004E3127 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16331B92AD11DB7004E3127 /* ActivityIndicator.swift */; };
 		C16331BC2AD125E1004E3127 /* FullWidthModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16331BB2AD125E1004E3127 /* FullWidthModifier.swift */; };
 		C16331BF2AD1271B004E3127 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16331BE2AD1271B004E3127 /* ImageExtension.swift */; };
 		C16331C22AD5FD53004E3127 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16331C12AD5FD53004E3127 /* SearchBar.swift */; };
 		C16331C42AD726A8004E3127 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16331C32AD726A7004E3127 /* ActivityView.swift */; };
+		C170AC4E2AD944FD00C1B064 /* DeviceRotationViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C170AC4D2AD944FC00C1B064 /* DeviceRotationViewModifier.swift */; };
+		C170AC502AD94B7C00C1B064 /* RecipeDetailVPortraitLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C170AC4F2AD94B7C00C1B064 /* RecipeDetailVPortraitLayout.swift */; };
+		C170AC522AD94FE400C1B064 /* RecipeDetailLandscapeLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C170AC512AD94FE400C1B064 /* RecipeDetailLandscapeLayout.swift */; };
 		C186B8AA2ABE04FD00A29CD3 /* Fetch_Meals_ExerciseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C186B8A92ABE04FD00A29CD3 /* Fetch_Meals_ExerciseApp.swift */; };
 		C186B8AC2ABE04FD00A29CD3 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C186B8AB2ABE04FD00A29CD3 /* MainScreen.swift */; };
 		C186B8AE2ABE04FE00A29CD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C186B8AD2ABE04FE00A29CD3 /* Assets.xcassets */; };
@@ -28,7 +32,7 @@
 		C186B8CE2AC1D7E000A29CD3 /* LazyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C186B8CD2AC1D7E000A29CD3 /* LazyImage.swift */; };
 		C186B8D02AC1DF6800A29CD3 /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C186B8CF2AC1DF6800A29CD3 /* URLExtensions.swift */; };
 		C186B8D22AC1F7FA00A29CD3 /* MealListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C186B8D12AC1F7FA00A29CD3 /* MealListItemView.swift */; };
-		C186B8D42AC200D600A29CD3 /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C186B8D32AC200D600A29CD3 /* RecipeDetailView.swift */; };
+		C186B8D42AC200D600A29CD3 /* RecipeDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C186B8D32AC200D600A29CD3 /* RecipeDetailScreen.swift */; };
 		C186B8D62AC2013600A29CD3 /* DessertListPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C186B8D52AC2013600A29CD3 /* DessertListPreview.swift */; };
 		C186B8D92AC2156400A29CD3 /* TheMealDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C186B8D82AC2156400A29CD3 /* TheMealDBService.swift */; };
 		C186B8DB2AC217E700A29CD3 /* Meal.json in Resources */ = {isa = PBXBuildFile; fileRef = C186B8DA2AC217E700A29CD3 /* Meal.json */; };
@@ -47,12 +51,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C10A2F302AE26E16001D8509 /* DeviceRotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRotationView.swift; sourceTree = "<group>"; };
 		C16331B52ACCF551004E3127 /* BaseScreenLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScreenLogic.swift; sourceTree = "<group>"; };
 		C16331B92AD11DB7004E3127 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		C16331BB2AD125E1004E3127 /* FullWidthModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullWidthModifier.swift; sourceTree = "<group>"; };
 		C16331BE2AD1271B004E3127 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		C16331C12AD5FD53004E3127 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		C16331C32AD726A7004E3127 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		C170AC4D2AD944FC00C1B064 /* DeviceRotationViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRotationViewModifier.swift; sourceTree = "<group>"; };
+		C170AC4F2AD94B7C00C1B064 /* RecipeDetailVPortraitLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailVPortraitLayout.swift; sourceTree = "<group>"; };
+		C170AC512AD94FE400C1B064 /* RecipeDetailLandscapeLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailLandscapeLayout.swift; sourceTree = "<group>"; };
 		C186B8A62ABE04FD00A29CD3 /* Fetch Meals Exercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fetch Meals Exercise.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C186B8A92ABE04FD00A29CD3 /* Fetch_Meals_ExerciseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetch_Meals_ExerciseApp.swift; sourceTree = "<group>"; };
 		C186B8AB2ABE04FD00A29CD3 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
@@ -69,7 +77,7 @@
 		C186B8CD2AC1D7E000A29CD3 /* LazyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyImage.swift; sourceTree = "<group>"; };
 		C186B8CF2AC1DF6800A29CD3 /* URLExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensions.swift; sourceTree = "<group>"; };
 		C186B8D12AC1F7FA00A29CD3 /* MealListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListItemView.swift; sourceTree = "<group>"; };
-		C186B8D32AC200D600A29CD3 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
+		C186B8D32AC200D600A29CD3 /* RecipeDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailScreen.swift; sourceTree = "<group>"; };
 		C186B8D52AC2013600A29CD3 /* DessertListPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertListPreview.swift; sourceTree = "<group>"; };
 		C186B8D82AC2156400A29CD3 /* TheMealDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBService.swift; sourceTree = "<group>"; };
 		C186B8DA2AC217E700A29CD3 /* Meal.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Meal.json; sourceTree = "<group>"; };
@@ -78,6 +86,7 @@
 		C186B8E02AC28C1B00A29CD3 /* EmptyMealListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyMealListView.swift; sourceTree = "<group>"; };
 		C186B8E22AC28C6100A29CD3 /* CategorySelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectorView.swift; sourceTree = "<group>"; };
 		C186B8E42AC31FFD00A29CD3 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		C1BF02232AE0D3300090F50A /* Fetch-Meals-Exercise-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Fetch-Meals-Exercise-Info.plist"; sourceTree = SOURCE_ROOT; };
 		C1E143592AC3A42F00C8FD3E /* HttpRequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestError.swift; sourceTree = "<group>"; };
 		C1E1435C2AC3A4C400C8FD3E /* DefaultImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultImageCache.swift; sourceTree = "<group>"; };
 		C1E1435F2AC3A8D800C8FD3E /* CategorySelectorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectorItem.swift; sourceTree = "<group>"; };
@@ -102,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				C16331BB2AD125E1004E3127 /* FullWidthModifier.swift */,
+				C170AC4D2AD944FC00C1B064 /* DeviceRotationViewModifier.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -138,6 +148,7 @@
 		C186B8A82ABE04FD00A29CD3 /* Fetch Meals Exercise */ = {
 			isa = PBXGroup;
 			children = (
+				C1BF02232AE0D3300090F50A /* Fetch-Meals-Exercise-Info.plist */,
 				C1E143662AC3BF3B00C8FD3E /* AppConfig.swift */,
 				C186B8A92ABE04FD00A29CD3 /* Fetch_Meals_ExerciseApp.swift */,
 				C186B8BE2ABE0DE600A29CD3 /* Core */,
@@ -188,11 +199,12 @@
 				C186B8E02AC28C1B00A29CD3 /* EmptyMealListView.swift */,
 				C186B8D12AC1F7FA00A29CD3 /* MealListItemView.swift */,
 				C186B8C32AC061B000A29CD3 /* MealsListView.swift */,
-				C186B8D32AC200D600A29CD3 /* RecipeDetailView.swift */,
+				C170AC4F2AD94B7C00C1B064 /* RecipeDetailVPortraitLayout.swift */,
 				C1E1435E2AC3A8C000C8FD3E /* CategorySelector */,
 				C186B8CC2AC1D7C900A29CD3 /* Components */,
 				C16331BD2AD126CE004E3127 /* Modifiers */,
 				C186B8C22AC0614A00A29CD3 /* Screens */,
+				C170AC512AD94FE400C1B064 /* RecipeDetailLandscapeLayout.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,6 +212,7 @@
 		C186B8C22AC0614A00A29CD3 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				C186B8D32AC200D600A29CD3 /* RecipeDetailScreen.swift */,
 				C186B8AB2ABE04FD00A29CD3 /* MainScreen.swift */,
 			);
 			path = Screens;
@@ -222,6 +235,7 @@
 				C16331B92AD11DB7004E3127 /* ActivityIndicator.swift */,
 				C186B8CD2AC1D7E000A29CD3 /* LazyImage.swift */,
 				C16331C12AD5FD53004E3127 /* SearchBar.swift */,
+				C10A2F302AE26E16001D8509 /* DeviceRotationView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -346,7 +360,7 @@
 				C16331BC2AD125E1004E3127 /* FullWidthModifier.swift in Sources */,
 				C186B8C42AC061B000A29CD3 /* MealsListView.swift in Sources */,
 				C186B8BD2ABE0B6500A29CD3 /* Meal.swift in Sources */,
-				C186B8D42AC200D600A29CD3 /* RecipeDetailView.swift in Sources */,
+				C186B8D42AC200D600A29CD3 /* RecipeDetailScreen.swift in Sources */,
 				C1E143652AC3BA7000C8FD3E /* PublisherExtension.swift in Sources */,
 				C186B8C82AC1D2F700A29CD3 /* ImageCache.swift in Sources */,
 				C16331C22AD5FD53004E3127 /* SearchBar.swift in Sources */,
@@ -356,11 +370,14 @@
 				C186B8AC2ABE04FD00A29CD3 /* MainScreen.swift in Sources */,
 				C186B8AA2ABE04FD00A29CD3 /* Fetch_Meals_ExerciseApp.swift in Sources */,
 				C186B8CE2AC1D7E000A29CD3 /* LazyImage.swift in Sources */,
+				C170AC4E2AD944FD00C1B064 /* DeviceRotationViewModifier.swift in Sources */,
 				C186B8CB2AC1D55100A29CD3 /* ImageLoader.swift in Sources */,
 				C186B8BB2ABE06D300A29CD3 /* MealCategory.swift in Sources */,
 				C186B8E32AC28C6100A29CD3 /* CategorySelectorView.swift in Sources */,
+				C170AC522AD94FE400C1B064 /* RecipeDetailLandscapeLayout.swift in Sources */,
 				C186B8D02AC1DF6800A29CD3 /* URLExtensions.swift in Sources */,
 				C186B8B92ABE05E100A29CD3 /* MealCompactItem.swift in Sources */,
+				C170AC502AD94B7C00C1B064 /* RecipeDetailVPortraitLayout.swift in Sources */,
 				C186B8DF2AC224BE00A29CD3 /* Category.swift in Sources */,
 				C186B8D62AC2013600A29CD3 /* DessertListPreview.swift in Sources */,
 				C186B8E12AC28C1B00A29CD3 /* EmptyMealListView.swift in Sources */,
@@ -374,6 +391,7 @@
 				C186B8D22AC1F7FA00A29CD3 /* MealListItemView.swift in Sources */,
 				C16331BA2AD11DB7004E3127 /* ActivityIndicator.swift in Sources */,
 				C16331B62ACCF551004E3127 /* BaseScreenLogic.swift in Sources */,
+				C10A2F312AE26E16001D8509 /* DeviceRotationView.swift in Sources */,
 				C186B8C02ABE0DF100A29CD3 /* HttpRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,12 +529,16 @@
 				DEVELOPMENT_TEAM = 7S3T54XF2K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Alex Fetch Exercise";
+				INFOPLIST_FILE = "Fetch-Meals-Exercise-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Meals Browser";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -542,12 +564,16 @@
 				DEVELOPMENT_TEAM = 7S3T54XF2K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Alex Fetch Exercise";
+				INFOPLIST_FILE = "Fetch-Meals-Exercise-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Meals Browser";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

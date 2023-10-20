@@ -26,6 +26,7 @@ struct CategorySelectorView: View {
                     }
                 }
             }
+            .padding([.leading, .trailing], 4)
         }
         .frame(maxHeight: 40)
     }

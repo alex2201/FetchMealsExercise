@@ -69,8 +69,7 @@ struct Meal: Decodable, Identifiable, Hashable {
             }
         }
 
-        // Some recipes have duplicated ingredients.
-        ingredients = ingredientsArray.removingDuplicates()
+        ingredients = ingredientsArray
     }
     
     func hash(into hasher: inout Hasher) {
